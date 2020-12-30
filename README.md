@@ -10,9 +10,20 @@
 
 NBC 问题简述：
 根据 bayes rule: 
-P(Y|X1, X2, X3)=P(X1, X2, X3, Y)/P(X1, X2, X3) 
+$$\begin{aligned}
+P(Y|X1, X2, X3)=P(X1, X2, X3, Y)/P(X1, X2, X3)
+\end{aligned}$$
+ 
 根据chain rule与条件独立性质: 
-P(X1, X2, X3, Y)=P(X1, X2, X3|Y)* P(Y)= P(X1|X2, X3, Y)* P(X2, X3, Y) = P(X1|Y)* P(X2, X3, Y)=P(X1|Y)* P(X2|X3, Y) * P(X3, Y) =P(X1|Y)* P(X2|Y)* P(X3, Y) = P(X1|Y)* P(X2|Y)* P(X3|Y)  * P(Y)
+$$\begin{aligned}
+P(X1, X2, X3, Y)&=P(X1, X2, X3|Y)* P(Y)\\
+&= P(X1|X2, X3, Y)* P(X2, X3, Y) \\
+&= P(X1|Y)* P(X2, X3, Y)\\
+&=P(X1|Y)* P(X2|X3, Y) * P(X3, Y) \\
+&=P(X1|Y)* P(X2|Y)* P(X3, Y)\\
+& = P(X1|Y)* P(X2|Y)* P(X3|Y)  * P(Y)
+\end{aligned}$$
+
 最终根据P(Y|X1, X2, X3)的大小， 输出结果（举例：
 P(Y=yes|X1, X2, X3)=0.2, P(Y=no|X1, X2, X3)=0.8, then the output result should be "yes"）
 
